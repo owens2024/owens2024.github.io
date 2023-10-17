@@ -1,0 +1,217 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 13px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --primary-50: #fff7ed;
+  --primary-100: #ffedd5;
+  --primary-200: #fed7aa;
+  --primary-300: #fdba74;
+  --primary-400: #fb923c;
+  --primary-500: #f97316;
+  --primary-600: #ea580c;
+  --primary-700: #c2410c;
+  --primary-800: #9a3412;
+  --primary-900: #7c2d12;
+  --primary-950: #6c2e12;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+  --neutral-950: #0b0f19;
+}
+
+html, body{
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: #242424;
+}
+
+main{
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  background-color: var(--neutral-300);
+  border: 3px solid #180178;
+}
+
+.chatbot {
+  height: calc(100vh - 158px);
+  
+}
+
+section {
+  height: calc(100% - 74px);
+  overflow-y: auto;
+  margin-top: 0px;
+  padding: 0.5em;
+}
+
+
+.chats div {
+  background-color: darkslategray;
+  max-width: 70%;
+  padding: 5px;
+  border-radius: 22px;
+  color: var(--neutral-800);
+  border-width: 1px;
+  border-style: solid;
+  margin-bottom:1em;
+}
+
+p span{
+  margin: 5px;
+}
+
+p span:first-child{
+  margin-right: 0;
+}
+
+.chats div.user_msg{
+  border-color: var(--primary-200);
+  background-color: var(--primary-50);
+  text-align: right;
+  margin-left: 30%;
+  display: flex;
+  flex-direction: row-reverse;
+  border-bottom-right-radius: 0;
+}
+
+.chats div.bot_msg{
+  border-bottom-left-radius: 0;
+  border-color: var(--neutral-200);
+  background: var(--neutral-50);
+}
+
+.chats div.endOfList{
+  width: 1px;
+  height: 1px;
+  padding: 0px;
+  background-color: white;
+  border: 0px;
+}
+
+.chats div p {
+  white-space: pre-line;
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
+}
+
+form{
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+}
+
+input{
+  color: black;
+  width: calc(100% - 20px);
+  height: 40px;
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: white;
+  border-top: 1px solid var(--neutral-200);
+  box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 2px 4px 0px inset;
+}
+
+input:focus{
+  outline: none;
+}
+
+.dot-pulse {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  box-shadow: 9999px 0 0 -5px;
+  animation: dot-pulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+  margin-left: 85px;
+}
+.dot-pulse::before, .dot-pulse::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+}
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px;
+  animation: dot-pulse-before 1.5s infinite linear;
+  animation-delay: 0s;
+}
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px;
+  animation: dot-pulse-after 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dot-pulse-before {
+  0% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 9984px 0 0 -5px;
+  }
+}
+@keyframes dot-pulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 9999px 0 0 -5px;
+  }
+}
+@keyframes dot-pulse-after {
+  0% {
+    box-shadow: 10014px 0 0 -5px;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px;
+  }
+  60%, 100% {
+    box-shadow: 10014px 0 0 -5px;
+  }
+}
